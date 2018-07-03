@@ -22,6 +22,13 @@ import pymysql.cursors
 
 logger = logging.getLogger(__name__)
 
+connPro = pymysql.connect(host='172.15.0.225',
+                        user='myuser',
+                        password='promyadm',                             
+                        db='DispAll_CBK',
+                        charset='utf8mb4',
+                        cursorclass=pymysql.cursors.DictCursor)
+
 cl = snap7.client.Client()
 print('Подключаемся')
 cl.connect('172.15.202.150',0,2)
